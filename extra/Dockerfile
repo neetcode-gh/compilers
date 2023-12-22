@@ -87,7 +87,7 @@ RUN set -xe && \
     apt-get update -o Acquire::Check-Valid-Until=false && \
     apt-get install -y apt-transport-https && \
     apt-get update -o Acquire::Check-Valid-Until=false && \
-    apt-get install -y dotnet-sdk-8.0 && \
+    apt-get install -y dotnet-sdk-3.1 && \
     rm -rf /var/lib/apt/lists/*
 
 # Mono
