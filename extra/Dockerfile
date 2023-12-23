@@ -3,14 +3,10 @@ FROM judge0/compilers:1.4.0-slim
 # Python for ML
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip3 install \
-        mlxtend \
-        numpy \
-        pandas \
-        scikit-learn \
-        pytest \
-        torch \
-        scipy && \
+    apt-get install -y libblas-dev liblapack-dev gfortran build-essential && \
+    pip3 install --upgrade pip setuptools wheel && \
+    pip3 install cython && \
+    pip3 install mlxtend numpy pandas scikit-learn pytest torch scipy && \
     rm -rf /var/lib/apt/lists/*
 
 # Nim
